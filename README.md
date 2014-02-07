@@ -47,4 +47,20 @@ While loops rely on the 'until' keyword, and For loops use the same sort of set 
 
 Also seen here is incrementing number variables, which defaults to '1' when no amount to increment 'by' is given.
 
+**Functions**
+
+Functions 'take' something in and then 'return' something back. Again note no braces.
+
+            function noArguments takes in nothing                     function noArguments () {
+                declare x is "everything";                                var x = "everything";
+                return x;                                                 return x;
+            end function                                              }
+            
+            
+            function withArguments takes in y                         function withArguments ( y ) {
+                return y + 3;                                             return y + 3;
+            end function;                                             }
+
+When a function takes in no arguments, type 'takes in nothing'. Again, NondeScript should be typed and feel like the actual thing you are trying to make the program do.
+
 repo for the NondeScript compiler project
