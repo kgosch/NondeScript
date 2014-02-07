@@ -23,7 +23,7 @@ As you can see, semicolons are used at the end of statements. This is because it
 
 **Declaring and Assigning Variables**
 
-To declare a variable, you type 'declare'. To say a varible is something, you type 'is'. Pretty simple really...
+To declare a variable, you type 'declare'. To say a variable is something, you type 'is'. Pretty simple really...
 
             declare x;                                                var x;
             declare y is 5;                                           var y = 5;
@@ -31,6 +31,20 @@ To declare a variable, you type 'declare'. To say a varible is something, you ty
             
 Variables can be declared with out being initialized and types are not required, as NondeScript uses dynamic typing.
 
+**Loops, While and For**
 
+While loops rely on the 'until' keyword, and For loops use the same sort of set up as JavaScript. Note however that braces are not used, but rather the naked indents show where the loops block is located.
+
+            declare i is 0;                                           var i = 0;
+            loop until i is 10                                        while ( i != 10 ) {
+                increment i by 2;                                         i += 2;
+            end loop                                                  }
+            
+            
+            loop declare i is 0, until i is > 5, increment i          for ( var i = 0; i <= 5; i++ ) {
+                display i;                                                console.log( i );
+            end loop                                                  }
+
+Also seen here is incrementing number variables, which defaults to '1' when no amount to increment 'by' is given.
 
 repo for the NondeScript compiler project
