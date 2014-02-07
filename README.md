@@ -29,7 +29,7 @@ To declare a variable, you type 'declare'. To say a variable is something, you t
             declare y is 5;                                           var y = 5;
             x is "cool";                                              x = "cool";
             
-Variables can be declared with out being initialized and types are not required, as NondeScript uses dynamic typing.
+Variables can be declared without being initialized and types are not required, as NondeScript uses dynamic typing.
 
 **Loops, While and For**
 
@@ -63,4 +63,62 @@ Functions 'take' something in and then 'return' something back. Again note no br
 
 When a function takes in no arguments, type 'takes in nothing'. Again, NondeScript should be typed and feel like the actual thing you are trying to make the program do.
 
-repo for the NondeScript compiler project
+**Objects**
+
+TOO DOO
+
+
+**Syntax**
+
+          Script         ::= Stmt+
+          
+          Stmt           ::= Declaration
+                          |  Increment ';'
+                          |  'display'  Exp  ';'
+                          |  Assignment ';'
+                          |  While
+                          |  Call ';'
+                          |  ForLoop
+                          |  Return ';'
+          
+          Declaration    ::= VarDec | FunDec
+          
+          VarDec         ::= 'declare' Id  ('is'  Exp)?  ';'
+          
+          FunDec         ::= 'function'  Id  Params  Block Return
+          
+          Increment      ::= ('increment' | 'decrement') Id ('by' Int)?
+                    
+          Assignment     ::= Id  'is'  Exp
+          
+          While          ::= 'loop'  Exp  Block
+          
+          Call           ::= Id  Args
+          
+          ForLoop        ::= 'loop' (VarDec)? ',' Exp  ','  Increment  Block
+          
+          Return         ::= 'return' Exp
+          
+          Block          ::= '    '  Stmt*  'end' ('loop' | 'function')
+          
+          Args           ::= 'takes in'  ('nothing' | Exp)  (',' Exp)*
+          
+          Exp            ::= UnaryOp  Exp
+                          |  Exp  BinaryOp  Exp
+                          |  'until' Exp
+                          |  IntLit | StringLit | true | false | Call
+          
+          UnaryOps       ::= '-' | 'not'
+          
+          BinaryOps      ::= 'AND' | 'OR' 
+          
+          ComparisonOps  ::= 'is ('>' | '<') | 'is = OR ('>' | '<') | 'is' | 'is not'
+          
+          AddOps         ::= '+' | '-'
+          
+          MultOps        ::= '*' | "/"
+          
+          Type           ::= Int
+                          |  Boolean
+                          |  String
+                          |  Id
